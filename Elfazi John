@@ -1,0 +1,76 @@
+// 1. Define classes with inheritance
+class Animal {
+  void makeSound() {
+    print('Some generic sound');
+  }
+}
+
+class Dog extends Animal {
+  @override
+  void makeSound() {
+    print('Woof woof!');
+  }
+}
+
+// 2. Define an interface
+abstract class Drawable {
+  void draw();
+}
+
+// 3. Implement the interface in a class
+class Circle implements Drawable {
+  @override
+  void draw() {
+    print('Drawing a circle');
+  }
+}
+
+// 4. Override an inherited method
+class Cat extends Animal {
+  @override
+  void makeSound() {
+    print('Meow!');
+  }
+}
+
+// 5. Initialize an instance of a class with data from a file
+class Person {
+  String name;
+  int age;
+
+  Person(this.name, this.age);
+
+  @override
+  String toString() {
+    return 'Name: $name, Age: $age';
+  }
+}
+
+void main() {
+  // Object-oriented model with inheritance
+  Animal animal = Animal();
+  animal.makeSound(); // Output: Some generic sound
+
+  Dog dog = Dog();
+  dog.makeSound(); // Output: Woof woof!
+
+  // Class that implements an interface
+  Circle circle = Circle();
+  circle.draw(); // Output: Drawing a circle
+
+  // Class that overrides an inherited method
+  Cat cat = Cat();
+  cat.makeSound(); // Output: Meow!
+
+  // Instance of a class initialized with data from a file
+  List<Person> people = [
+    Person('Alice', 30),
+    Person('Bob', 25),
+    Person('Charlie', 35),
+  ];
+
+  // Method that demonstrates the use of a loop
+  for (var person in people) {
+    print(person); // Output: Name: ..., Age: ...
+  }
+}
